@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOM! Hardware</title>
+    <link rel="stylesheet" href="contato.css">
+    <style>
+        .trigger-btn {
+        padding: 10px 20px;
+        background: #fe4141;
+        color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 20px;
+      }
+    
+      #message-trigger {
+        display: none;
+      }
+    
+      .message-box {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        background: #333;
+        color: white;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+    
+      @keyframes hideMessage {
+        0%, 80% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    
+    
+      #message-trigger:checked ~ .message-box {
+        opacity: 1;
+        pointer-events: auto;
+        animation: hideMessage 3s forwards;
+      }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Entre na sua conta</h1>
+        
+
+            <div class="form-group">
+                <label for="email">Endereço de Email</label>
+                <input type="email" id="email" placeholder="boom@exemplo.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Insira uma senha</label>
+                <input type="text" id="subject" placeholder="boom1234">
+            </div>
+            <br>
+            <label for="message-trigger" class="trigger-btn" style="color: black;">Logar</label>
+            <input type="checkbox" id="message-trigger">
+            <div class="message-box">
+                Conta logada com sucesso!
+              </div>
+        </form>
+        <br>
+        <br>
+        <a href="index.html">Voltar para a página inicial</a>
+        
+        <br>
+        <a href="criarconta.html">Não tem uma conta?</a>
+        
+    </div>
+</body>
+</html>
